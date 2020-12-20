@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flight Status | Bootstrap 4</title>
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css?family=Oxygen:300&display=swap" rel="stylesheet">
+  <!-- bootstrap 4 css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- custom css   -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <div class="my-info text-center">
+        <h2>Name: Saritha Singh</h2>
+        <h4>Net Bank Balance: $<span id="myAccountBalance">5000</span></h4>
+
+        <button class="btn btn-info" data-toggle="modal" data-target="#sendMoney">Send Money</button>
+        <a class="btn btn-info" href="" data-toggle="modal" data-target="#transactionHistory">See All Transaction</a>
+    </div>
+
+    <!-- Modal send money -->
+    <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="input-group mb-3">
+                            <input type="text" id="enterName" class="form-control" placeholder="Recipient's username"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">@email.com</span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">$</span>
+                            </div>
+                            <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
+                                aria-label="Amount (to the nearest dollar)">
+                            <div class="input-group-append">
+                                <span class="input-group-text">.00</span>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal">Send
+                        Money</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal transaction History-->
+    <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ol id="transaction-history-body">
+
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  <div class="container mt-5">
+    <h3 class="text-center mb-3">Balance Details</h3>
+    <div class="table-responsive">
+      <table class="table table-dark ">
+        <thead>
+          <tr class="bg-dark text-white">
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Amount</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Anthima</td>
+            <td>Anthima@gmail.com</td>
+            <td>5000</td>
+           
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Reena</td>
+            <td>Reena@gmail.com</td>
+            <td>2000</td>
+           
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Ravi</td>
+            <td>Ravi@gmail.com</td>
+            <td>3000</td>
+           
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Alok</td>
+            <td>Alok@gmail.comm</td>
+            <td>7096</td>
+            
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Saumya</td>
+            <td>Saumya@gmail.com</td>
+            <td>5000</td>
+          </tr>
+              <tr>
+            <th scope="row">6</th>
+            <td>Ji chang</td>
+            <td>Jichang@gmail.com</td>
+            <td>7890</td>
+          </tr>
+            <tr>
+            <th scope="row">7</th>
+            <td>khimochi</td>
+            <td>khimochi@gmail.com</td>
+            <td>9087</td>
+          </tr>
+            <tr>
+            <th scope="row">8</th>
+            <td>Ritu</td>
+            <td>ritu@gmail.com</td>
+            <td>86745</td>
+          </tr>
+            <tr>
+            <th scope="row">9</th>
+            <td>pinky</td>
+            <td>pinky@gmail.com</td>
+            <td>8000</td>
+          </tr>
+            <tr>
+            <th scope="row">10</th>
+            <td>Sony</td>
+            <td>Sony@gmail.com</td>
+            <td>7890</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- jquery cdn -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap 4 popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap 4 js -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+  <!-- custom js -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
